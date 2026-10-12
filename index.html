@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#102b4e">
+<meta name="description" content="GATE 2027 CS and DA study tracker">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg">
+<title>GATE 2027 Study Tracker</title>
+<style>
+:root{--navy:#102b4e;--blue:#2768bd;--paper:#fffdf7;--ink:#172d45;--muted:#69798b;--line:#d9e1e9;--green:#278466;--orange:#c87b32;--pink:#c85f77;--purple:#7b68ad}
+*{box-sizing:border-box}body{margin:0;background:#f2f5f8;color:var(--ink);font-family:ui-rounded,"Trebuchet MS",system-ui,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}.top{background:var(--navy);color:white;padding:22px 17px 25px;border-radius:0 0 24px 24px}.top small{color:#c7d9ee}.top h1{font-size:23px;margin:6px 0}.top p{font-size:13px;margin:0;color:#d6e3f2}.wrap{max-width:850px;margin:auto;padding:14px 13px 90px}.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:1.4px;color:var(--muted);font-weight:800}.section-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:8px 2px 12px}.section-head h2{font-size:18px;margin:0}.switcher{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px}.paper-btn{background:var(--paper);border:2px solid #d7dfeb;border-radius:16px;padding:15px 13px;text-align:left;color:var(--ink);box-shadow:2px 3px 0 #d9e0e8}.paper-btn.active{border-color:var(--blue);box-shadow:3px 4px 0 #b9cce5;background:#f8fbff}.paper-btn strong{display:block;font-size:16px}.paper-btn span{font-size:12px;color:var(--muted)}.paper-icon{font-size:20px;margin-bottom:5px;display:block}.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:16px}.metric{background:white;border:1.5px solid var(--line);border-radius:14px;padding:12px 10px;box-shadow:2px 3px 0 #e0e5eb}.metric b{font-size:21px;display:block}.metric span{font-size:11px;color:var(--muted);line-height:1.3;display:block}.subject-list{display:grid;gap:10px}.subject-card{position:relative;background:var(--paper);border:1.5px solid #d6dfe8;border-radius:15px;padding:13px 13px 12px;text-align:left;color:var(--ink);box-shadow:2px 3px 0 #dce3e9;width:100%;overflow:hidden}.subject-card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--accent)}.subject-line{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-left:3px}.subject-title{font-size:14px;font-weight:800;line-height:1.35}.subject-sub{font-size:11px;color:var(--muted);margin-top:3px}.percent{font-size:16px;font-weight:900;white-space:nowrap;color:var(--accent)}.scribble{height:10px;border:1.5px solid #d8e0e8;border-radius:10px;margin:10px 0 0 3px;overflow:hidden;transform:rotate(-.3deg);background:#f2f0e8}.scribble span{display:block;height:100%;border-radius:10px;background:repeating-linear-gradient(135deg,var(--accent) 0 5px, color-mix(in srgb,var(--accent) 65%,white) 5px 8px);width:0;transition:width .2s}.topic-note{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin:7px 0 0 3px}.primary,.secondary,.danger{border:0;border-radius:11px;padding:11px 13px;font-weight:800}.primary{background:var(--blue);color:white}.secondary{background:#e8eef6;color:#25476c}.danger{background:#ffedf0;color:#a82f46}.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.row>*{flex:1}.hidden{display:none!important}.detail-head{display:flex;gap:10px;align-items:center;margin-bottom:14px}.back{border:1px solid var(--line);border-radius:11px;padding:10px 12px;background:white;color:var(--ink);font-weight:800}.detail-head h2{margin:0;font-size:19px}.detail-head p{margin:3px 0 0;color:var(--muted);font-size:12px}.panel{background:white;border:1.5px solid var(--line);border-radius:16px;padding:15px;margin-bottom:12px;box-shadow:2px 3px 0 #e4e9ee}.panel h3{margin:0 0 10px;font-size:15px}.field{margin:10px 0}.field label{display:block;font-size:12px;font-weight:800;margin-bottom:5px}.field input,.field select,.field textarea{width:100%;padding:10px;border:1px solid #cbd6e2;border-radius:10px;background:#fff;color:var(--ink)}.field textarea{min-height:65px}.topic{border:1px dashed #cbd5e0;border-radius:12px;padding:10px;margin:8px 0;background:#fffefa}.topic-top{display:flex;gap:8px;align-items:flex-start}.topic-top input{margin-top:3px}.topic-name{font-size:13px;font-weight:800;flex:1}.topic-level{font-size:10px;border-radius:7px;background:#edf2f8;padding:4px 6px;color:#4a6077}.topic small{display:block;color:var(--muted);font-size:11px;margin:5px 0 0 22px}.topic select{margin:8px 0 0 22px;width:calc(100% - 22px);padding:7px;border:1px solid #d2dce6;border-radius:8px;background:white}.tiny{font-size:11px;color:var(--muted);line-height:1.5}.empty{padding:18px;text-align:center;color:var(--muted);font-size:13px}.report{border:1px solid var(--line);border-radius:11px;padding:10px;margin:8px 0}.report strong{font-size:13px}.report p{font-size:12px;color:var(--muted);margin:5px 0}.bottom{position:fixed;bottom:0;left:0;right:0;background:#ffffffed;border-top:1px solid var(--line);padding:9px;text-align:center;font-size:11px;color:var(--muted);backdrop-filter:blur(8px)}@media(min-width:600px){.subject-list{grid-template-columns:1fr 1fr}.wrap{padding-top:20px}.subject-card{min-height:104px}}@media(max-width:370px){.summary{grid-template-columns:1fr 1fr}.metric:last-child{grid-column:span 2}}
+</style>
+</head>
+<body>
+<header class="top"><small>YOUR PERSONAL PREPARATION DASHBOARD</small><h1>GATE 2027 Tracker</h1><p>CS primary · DA secondary · Track progress, practise PYQs, revise deliberately.</p></header>
+<main class="wrap">
+<div id="homeView">
+<div class="section-head"><div><div class="eyebrow">Choose your paper</div><h2>My preparation</h2></div></div>
+<div class="switcher">
+<button class="paper-btn active" data-paper="CS"><span class="paper-icon">✎</span><strong>GATE CS</strong><span>Computer Science & IT</span></button>
+<button class="paper-btn" data-paper="DA"><span class="paper-icon">⌁</span><strong>GATE DA</strong><span>Data Science & AI</span></button>
+</div>
+<div class="summary">
+<div class="metric"><b id="overallProgress">0%</b><span>Syllabus progress</span></div>
+<div class="metric"><b id="overallAccuracy">—</b><span>PYQ accuracy</span></div>
+<div class="metric"><b id="overallBacklog">0</b><span>Revision backlog</span></div>
+</div>
+<div class="section-head"><div><div class="eyebrow" id="paperEyebrow">COMPUTER SCIENCE & IT</div><h2>Subject checklist</h2></div><span class="tiny">Tap a subject ↗</span></div>
+<div id="subjectList" class="subject-list"></div>
+<div class="panel" style="margin-top:15px"><h3>Sunday review</h3><p class="tiny">Every Sunday, record three numbers: syllabus progress, PYQ accuracy, and revision backlog. Use the evidence to plan the next week.</p><div class="field"><label>Weekly reflection</label><textarea id="reflection" placeholder="What improved? What needs attention next week?"></textarea></div><button class="primary" id="saveReflection">Save reflection</button><div id="reflectionMsg" class="tiny"></div></div>
+</div>
+<div id="detailView" class="hidden">
+<div class="detail-head"><button class="back" id="backBtn">← Back</button><div><h2 id="detailTitle">Subject</h2><p id="detailSubtitle">Track topic mastery and performance</p></div></div>
+<div class="summary">
+<div class="metric"><b id="detailSyllabus">0%</b><span>Syllabus progress</span></div>
+<div class="metric"><b id="detailAccuracy">—</b><span>PYQ accuracy</span></div>
+<div class="metric"><b id="detailBacklog">0</b><span>Revision backlog</span></div>
+</div>
+<div class="panel"><h3>1. Topic mastery</h3><p class="tiny">Mark a topic complete only when you can explain it and solve questions. Change its level as you study.</p><div id="topicList"></div></div>
+<div class="panel"><h3>2. PYQ practice</h3><p class="tiny">Log independently attempted previous-year questions. Accuracy is calculated from correct ÷ attempted.</p><div class="field"><label>PYQs attempted</label><input type="number" id="pyqAttempted" min="0" value="0"></div><div class="field"><label>PYQs correct</label><input type="number" id="pyqCorrect" min="0" value="0"></div><div class="field"><label>Practice notes</label><textarea id="pyqNotes" placeholder="Mistakes, patterns, weak concepts…"></textarea></div><button class="primary" id="savePyq">Save PYQ record</button></div>
+<div class="panel"><h3>3. Revision queue</h3><p class="tiny">Pending revision topics are counted in the backlog metric. Add one topic per line.</p><div class="field"><label>Topics to revise</label><textarea id="revisionText" placeholder="e.g. Bayes theorem&#10;Deadlocks&#10;TCP congestion control"></textarea></div><button class="primary" id="saveRevision">Save revision queue</button></div>
+<div class="panel"><h3>Weekly subject history</h3><div id="subjectHistory" class="tiny">No records yet.</div></div>
+</div>
+</main>
+<footer class="bottom">Saved on this device only · Export backups regularly</footer>
+<script>
+const subjectsData={
+CS:[
+["Engineering Mathematics",["Discrete mathematics","Linear algebra","Calculus","Probability and statistics"]],
+["Digital Logic",["Boolean algebra","Combinational circuits","Sequential circuits","Number representation"]],
+["Computer Organization & Architecture",["Instruction sets and addressing modes","ALU, datapath and control","Pipelining and hazards","Memory hierarchy and cache","I/O and interrupts"]],
+["Programming & Data Structures",["C programming","Recursion","Arrays, stacks and queues","Linked lists","Trees and heaps","Graphs and hashing"]],
+["Algorithms",["Asymptotic analysis","Searching and sorting","Divide and conquer","Greedy algorithms","Dynamic programming","Graph algorithms"]],
+["Theory of Computation",["Regular languages and finite automata","Context-free grammars and PDA","Regular and context-free language properties","Turing machines","Decidability and undecidability"]],
+["Compiler Design",["Lexical analysis","Parsing","Syntax-directed translation","Runtime environments","Intermediate code generation","Code optimisation and data flow"]],
+["Operating Systems",["Processes and threads","CPU scheduling","Synchronization and deadlocks","Memory management and virtual memory","File systems"]],
+["Databases",["ER model and relational model","Relational algebra and SQL","Integrity constraints and normalisation","Indexing and file organisation","Transactions and concurrency control"]],
+["Computer Networks",["Layered architecture and protocols","Data link layer","IP addressing and routing","Transport layer: TCP/UDP","Application layer and network security"]],
+["General Aptitude",["Verbal aptitude","Quantitative aptitude","Analytical and logical reasoning","Spatial aptitude"]]
+],
+DA:[
+["Probability & Statistics",["Counting and probability axioms","Conditional probability and Bayes theorem","Random variables and distributions","Expectation, variance and moments","Joint, marginal and conditional distributions","CLT and statistical tests"]],
+["Linear Algebra",["Vector spaces and subspaces","Linear dependence and independence","Matrices, rank and determinant","Systems of linear equations","Eigenvalues and eigenvectors","LU and singular value decomposition"]],
+["Calculus & Optimization",["Limits, continuity and differentiability","Taylor series","Maxima and minima","Single-variable optimisation"]],
+["Programming, Data Structures & Algorithms",["Python programming","Stacks, queues, linked lists and trees","Hash tables","Searching and sorting","Divide and conquer","Graphs and shortest paths"]],
+["Database Management & Warehousing",["ER and relational models","Relational algebra, calculus and SQL","Normal forms and indexing","Data transformation","Data warehouse schemas and measures"]],
+["Machine Learning",["Linear and multiple regression","Ridge and logistic regression","KNN, Naive Bayes and LDA","SVM and decision trees","Bias-variance and cross-validation","Neural networks and MLP","Clustering: k-means and hierarchical","PCA and dimensionality reduction"]],
+["Artificial Intelligence",["Uninformed and informed search","Adversarial search","Propositional and predicate logic","Reasoning under uncertainty","Variable elimination and sampling"]],
+["General Aptitude",["Verbal aptitude","Quantitative aptitude","Analytical and logical reasoning","Spatial aptitude"]]
+]};
+const colors=["#2768bd","#278466","#c87b32","#7b68ad","#c85f77","#238b9b","#a06d35","#526e9d","#4b8766","#aa5678","#687c39"];
+const KEY="gate2027-tracker-v2";
+let db={subjects:{},pyq:{},revision:{},reflections:[]},currentPaper="CS",currentSubject="";
+function load(){try{const x=JSON.parse(localStorage.getItem(KEY)||"null");if(x)db={...db,...x}}catch(e){}}
+function save(){localStorage.setItem(KEY,JSON.stringify(db))}
+function getSubject(p,s){return db.subjects[p+"|"+s]||(db.subjects[p+"|"+s]={topics:{}})}
+function topicStates(p,s){return getSubject(p,s).topics}
+function pct(a,b){return b?Math.round(a/b*100):0}
+function subjectsFor(p){return subjectsData[p]}
+function subjectMetrics(p,s){let topics=subjectsFor(p).find(x=>x[0]===s)[1],st=topicStates(p,s),done=topics.filter(t=>st[t]?.done).length;let pyq=db.pyq[p+"|"+s]||{attempted:0,correct:0};let rev=(db.revision[p+"|"+s]||"").split("\n").map(x=>x.trim()).filter(Boolean);return {syllabus:pct(done,topics.length),accuracy:pyq.attempted?pct(pyq.correct,pyq.attempted):null,backlog:rev.length,done,total:topics.length}}
+function overall(p){let list=subjectsFor(p).map(x=>subjectMetrics(p,x[0]));let done=list.reduce((n,x)=>n+x.done,0),total=list.reduce((n,x)=>n+x.total,0),attempted=list.reduce((n,x)=>n+(db.pyq[p+"|"+subjectsFor(p)[list.indexOf(x)][0]]?.attempted||0),0),correct=list.reduce((n,x)=>n+(db.pyq[p+"|"+subjectsFor(p)[list.indexOf(x)][0]]?.correct||0),0);return {progress:pct(done,total),accuracy:attempted?pct(correct,attempted):null,backlog:list.reduce((n,x)=>n+x.backlog,0)}}
+function renderHome(){document.querySelectorAll("[data-paper]").forEach(b=>b.classList.toggle("active",b.dataset.paper===currentPaper));let o=overall(currentPaper);$("overallProgress").textContent=o.progress+"%";$("overallAccuracy").textContent=o.accuracy===null?"—":o.accuracy+"%";$("overallBacklog").textContent=o.backlog;$("paperEyebrow").textContent=currentPaper==="CS"?"COMPUTER SCIENCE & INFORMATION TECHNOLOGY":"DATA SCIENCE & ARTIFICIAL INTELLIGENCE";$("subjectList").innerHTML=subjectsFor(currentPaper).map((x,i)=>{let m=subjectMetrics(currentPaper,x[0]);return `<button class="subject-card" style="--accent:${colors[i%colors.length]}" data-subject="${esc(x[0])}"><div class="subject-line"><div><div class="subject-title">${esc(x[0])}</div><div class="subject-sub">${m.done} of ${m.total} topics complete</div></div><div class="percent">${m.syllabus}%</div></div><div class="scribble"><span style="width:${m.syllabus}%"></span></div><div class="topic-note"><span>${m.accuracy===null?"PYQs not logged":"PYQ accuracy "+m.accuracy+"%"}</span><span>${m.backlog} to revise</span></div></button>`}).join("");document.querySelectorAll("[data-subject]").forEach(b=>b.onclick=()=>openSubject(b.dataset.subject))}
+function $(id){return document.getElementById(id)}function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function openSubject(s){currentSubject=s;$("homeView").classList.add("hidden");$("detailView").classList.remove("hidden");$("detailTitle").textContent=s;$("detailSubtitle").textContent=currentPaper==="CS"?"GATE CS · topic tracker":"GATE DA · topic tracker";let topics=subjectsFor(currentPaper).find(x=>x[0]===s)[1],st=topicStates(currentPaper,s);$("topicList").innerHTML=topics.map((t,i)=>{let v=st[t]||{done:false,level:"Not started"};return `<div class="topic"><div class="topic-top"><input type="checkbox" data-done="${esc(t)}" ${v.done?"checked":""}><span class="topic-name">${esc(t)}</span><span class="topic-level">${v.done?"Done":esc(v.level)}</span></div><select data-level="${esc(t)}"><option ${v.level==="Not started"?"selected":""}>Not started</option><option ${v.level==="Learning"?"selected":""}>Learning</option><option ${v.level==="Practising"?"selected":""}>Practising</option><option ${v.level==="Revision due"?"selected":""}>Revision due</option><option ${v.level==="Confident"?"selected":""}>Confident</option></select></div>`}).join("");document.querySelectorAll("[data-done]").forEach(c=>c.onchange=()=>{let state=st[c.dataset.done]||{level:"Not started"};state.done=c.checked;if(c.checked)state.level="Confident";st[c.dataset.done]=state;save();openSubject(s);renderHome()});document.querySelectorAll("[data-level]").forEach(sel=>sel.onchange=()=>{let state=st[sel.dataset.level]||{done:false};state.level=sel.value;if(sel.value!=="Confident")state.done=false;else state.done=true;st[sel.dataset.level]=state;save();openSubject(s);renderHome()});let pyq=db.pyq[currentPaper+"|"+s]||{attempted:0,correct:0,notes:""};$("pyqAttempted").value=pyq.attempted;$("pyqCorrect").value=pyq.correct;$("pyqNotes").value=pyq.notes||"";$("revisionText").value=db.revision[currentPaper+"|"+s]||"";refreshMetrics();renderHistory()}
+function refreshMetrics(){let m=subjectMetrics(currentPaper,currentSubject);$("detailSyllabus").textContent=m.syllabus+"%";$("detailAccuracy").textContent=m.accuracy===null?"—":m.accuracy+"%";$("detailBacklog").textContent=m.backlog}
+function renderHistory(){let p=db.pyq[currentPaper+"|"+currentSubject];let r=db.revision[currentPaper+"|"+currentSubject]||"";$("subjectHistory").innerHTML=p?`PYQs attempted: ${p.attempted} · Correct: ${p.correct} · Accuracy: ${p.attempted?pct(p.correct,p.attempted):0}%<br>${esc(p.notes||"No notes added.")}<br>Revision topics pending: ${(r.split("\n").filter(x=>x.trim()).length)}`:"No PYQ records saved for this subject yet."}
+$("backBtn").onclick=()=>{$("detailView").classList.add("hidden");$("homeView").classList.remove("hidden");renderHome()};
+document.querySelectorAll("[data-paper]").forEach(b=>b.onclick=()=>{currentPaper=b.dataset.paper;renderHome()});
+$("savePyq").onclick=()=>{let attempted=Number($("pyqAttempted").value)||0,correct=Number($("pyqCorrect").value)||0;if(correct>attempted){alert("Correct answers cannot exceed attempted questions.");return}db.pyq[currentPaper+"|"+currentSubject]={attempted,correct,notes:$("pyqNotes").value};save();refreshMetrics();renderHome();renderHistory();alert("PYQ record saved.")};
+$("saveRevision").onclick=()=>{db.revision[currentPaper+"|"+currentSubject]=$("revisionText").value.split("\n").map(x=>x.trim()).filter(Boolean).join("\n");save();refreshMetrics();renderHome();renderHistory();alert("Revision queue saved.")};
+$("saveReflection").onclick=()=>{db.reflections.push({date:new Date().toISOString().slice(0,10),paper:currentPaper,text:$("reflection").value});save();$("reflectionMsg").textContent="Reflection saved on this device."};
+function init(){load();renderHome()}init();
+if("serviceWorker" in navigator && location.protocol.startsWith("http")){window.addEventListener("load",()=>navigator.serviceWorker.register("./service-worker.js").catch(()=>{}));}
+</script>
+</body>
+</html>

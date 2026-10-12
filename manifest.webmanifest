@@ -1,0 +1,17 @@
+{
+  "name": "GATE 2027 Study Tracker",
+  "short_name": "GATE Tracker",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f2f5f8",
+  "theme_color": "#102b4e",
+  "description": "GATE CS and DA study tracker",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
